@@ -4,6 +4,9 @@ var fs = require('fs');
 
 var app = express();
 
+// If process.env.PORT does not exist, use 3000
+var port = process.env.PORT || 3000;
+
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 
@@ -57,6 +60,6 @@ app.get('/bad', function(request, response) {
   });
 });
 
-app.listen(3000, function() {
-  console.log('Server is up on port 3000');
+app.listen(port, function() {
+  console.log('Server is up on port', port);
 });
