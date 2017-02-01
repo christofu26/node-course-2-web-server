@@ -60,6 +60,12 @@ app.get('/bad', function(request, response) {
   });
 });
 
+app.get('/projects', function(request, response) {
+  response.render('project.hbs', {
+    pageTitle: 'Projects'
+  });
+});
+
 app.listen(port, function() {
   console.log('Server is up on port', port);
 });
